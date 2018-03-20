@@ -24,7 +24,11 @@ namespace ODataSampleServer
             );
 
             ODataConventionModelBuilder builder = new ODataConventionModelBuilder();
-            builder.EntitySet<Person>("People");
+            var people = builder.EntitySet<Person>("People");
+            var reservations = builder.EntitySet<Reservation>("Reservations");
+
+            reservations.EntityType.Ignore(r => r.Price);
+
             config.Routes.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
         }
     }

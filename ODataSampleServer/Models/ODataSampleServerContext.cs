@@ -19,6 +19,17 @@ namespace ODataSampleServer.Models
         {
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            // configures one-to-many relationship
+            modelBuilder.Entity<Reservation>()
+                        .HasRequired<Person>(p => p.Person)
+                        .WithMany(p => p.Reservations)
+                        .HasForeignKey<int>(r => r.PersonId);
+        }
+
         public System.Data.Entity.DbSet<ODataSampleServer.Models.Person> People { get; set; }
+        public System.Data.Entity.DbSet<ODataSampleServer.Models.Reservation> Reservations { get; set; }
     }
+
 }
