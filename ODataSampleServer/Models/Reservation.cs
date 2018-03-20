@@ -16,12 +16,13 @@ namespace ODataSampleServer.Models
         public string Name { get; set; }
         public string Description { get; set; }
 
-        [IgnoreDataMember]
+        //[IgnoreDataMember]
         public decimal Price { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
+        [ForeignKey("Person")]
         public int PersonId { get; set; }
-        public Person Person { get; set; }
+        public virtual Person Person { get; set; }
     }
 }

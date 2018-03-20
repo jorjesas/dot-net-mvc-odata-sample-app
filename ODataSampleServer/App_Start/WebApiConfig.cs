@@ -23,6 +23,8 @@ namespace ODataSampleServer
                 defaults: new { id = RouteParameter.Optional }
             );
 
+            config.AddODataQueryFilter();
+
             ODataConventionModelBuilder builder = new ODataConventionModelBuilder();
             var people = builder.EntitySet<Person>("People");
             var reservations = builder.EntitySet<Reservation>("Reservations");

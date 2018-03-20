@@ -210,6 +210,10 @@
     <Compile Include="Migrations\201803201229207_AddReservations.Designer.cs">
       <DependentUpon>201803201229207_AddReservations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803202024042_PeopleUpdatedColumn.cs" />
+    <Compile Include="Migrations\201803202024042_PeopleUpdatedColumn.Designer.cs">
+      <DependentUpon>201803202024042_PeopleUpdatedColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ODataSampleServerContext.cs" />
     <Compile Include="Models\Person.cs" />
@@ -293,6 +297,9 @@
     <EmbeddedResource Include="Migrations\201803201229207_AddReservations.resx">
       <DependentUpon>201803201229207_AddReservations.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803202024042_PeopleUpdatedColumn.resx">
+      <DependentUpon>201803202024042_PeopleUpdatedColumn.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -308,7 +315,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>56977</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

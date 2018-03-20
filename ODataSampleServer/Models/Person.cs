@@ -12,10 +12,10 @@ namespace ODataSampleServer.Models
         [Key]
         public int PersonID { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
+        public string Quote { get; set; }
         public bool IsUnicorn { get; set; }
         public int LuckyNumber { get; set; }
 
-        public ICollection<Reservation> Reservations { get; set; }
+        public virtual ICollection<Reservation> Reservations { get; set; }
     }
 }

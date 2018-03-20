@@ -37,12 +37,14 @@ namespace ODataSampleServer.Controllers
         [EnableQuery(AllowedQueryOptions = AllowedQueryOptions.Skip | AllowedQueryOptions.Top | AllowedQueryOptions.OrderBy,
                     AllowedOrderByProperties = "Name",
                     // Disable any() and all() functions
-                    AllowedFunctions = AllowedFunctions.AllFunctions & ~AllowedFunctions.All & ~AllowedFunctions.Any)]
-        public IEnumerable<Object> GetReservations()
+                    AllowedFunctions = AllowedFunctions.AllFunctions & ~AllowedFunctions.All & ~AllowedFunctions.Any, PageSize = 10)]
+        public IQueryable<Reservation> GetReservations()
         {
-            var reservations = db.Reservations.Include(r => r.Person).ToList();
+        //    var reservations = db.Reservations.Include(r => r.Person).ToList();
 
-            return reservations.ConvertAll(r =>  new { Name = r.Name, Guest = r.Person.Name, StartDate = r.StartDate, EndDate = r.EndDate });
+        //    return reservations.ConvertAll(r =>  new { Name = r.Name, Guest = r.Person.Name, StartDate = r.StartDate, EndDate = r.EndDate });
+
+            return db.Reservations;
         }
 
         // GET: odata/Reservations(5)
